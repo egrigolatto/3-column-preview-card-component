@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+
+    --fuente_uno: 'Big Shoulders Display', cursive;
+    --fuente_dos: 'Lexend Deca', sans-serif;
+
+    /* Colors */
+    /* Primary */
+    --BrightOrange: hsl(31, 77%, 52%);
+    --DarkCyan: hsl(184, 100%, 22%);
+    --VeryDarkCyan: hsl(179, 100%, 13%);
+    /*Neutral */
+    --TransparentWhite: hsla(0, 0%, 100%, 0.75); /*paragraphs*/
+    --VeryLightGray: hsl(0, 0%, 95%); /*background, headings, buttons*/
+}
+
+body{
+    font-size: 15px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    /* grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); */
+}
+.card{
+    padding: 40px;
+    width: 275px;
+}
+.card_uno{
+    background-color: var(--BrightOrange);
+    border-radius: 10px 0 0 10px;
+}
+.card_dos{
+    background-color: var(--DarkCyan);
+}
+.card_tres{
+    background-color: var(--VeryDarkCyan);
+    border-radius: 0 10px 10px 0;
+}
+.card img{
+    margin-bottom: 30px;
+}
+.card h1{
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-family: var(--fuente_uno);
+    font-weight: 700;
+    color: var(--VeryLightGray);
+    font-size: 2.6em;
+}
+.card p{
+    margin-bottom: 80px;
+    color: var(--TransparentWhite);
+    font-family: var(--fuente_dos);
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: .9em;
+}
+button{
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-family: var(--fuente_dos);
+    font-weight: 400;
+    background-color: var(--VeryLightGray);
+    border: 2px solid var(--VeryLightGray);
+    cursor: pointer;
+    transition: all .5s;
+}
+.card_uno button{
+    color: var(--BrightOrange);
+}
+.card_uno button:hover{
+    color: var(--VeryLightGray);
+    background-color: var(--BrightOrange);
+}
+.card_dos button{
+    color: var(--DarkCyan);
+}
+.card_dos button:hover{
+   color: var(--VeryLightGray);
+   background-color: var(--DarkCyan);
+}
+
+.card_tres button{
+    color: var(--VeryDarkCyan);
+    
+}
+.card_tres button:hover{
+    color: var(--VeryLightGray);
+    background-color: var(--VeryDarkCyan);
+}
+
+@media(min-width:200px) and (max-width: 840px){
+    body{
+        height: auto;
+    }
+    .container{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .card{
+        width: 300px;
+    }
+    .card_uno{
+        margin-top: 50px;
+        border-radius: 10px 10px 0 0;
+    }
+    .card_tres{
+        border-radius: 0 0 10px 10px;
+        margin-bottom: 50px;
+    }
+    .card p{
+        margin-bottom: 20px;
+    }
+
+}
